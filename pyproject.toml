@@ -4,7 +4,7 @@ requires = [ "setuptools>=61", "wheel" ]
 
 [project]
 name = "aie4ml"
-version = "0.1.0"
+version = "0.1.1"
 description = "AMD AIE backend plugin for hls4ml"
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -12,18 +12,15 @@ authors = [
   { name = "Dimitrios Danopoulos", email = "dimitrios.danopoulos@cern.ch" },
 ]
 requires-python = ">=3.10"
+keywords = ["hls4ml", "aie", "amd", "fpga", "versal", "backend", "AI engine"]
 classifiers = [
-  "Programming Language :: Python :: 3 :: Only",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
-  "Programming Language :: Python :: 3.12",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.14",
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3 :: Only"
 ]
 dependencies = [
-  "hls4ml",
-  "jinja2",
-]
+  "jinja2>=3.0"
+  ]
 urls.Homepage = "https://github.com/dimdano/aie4ml"
 urls.Issues = "https://github.com/dimdano/aie4ml/issues"
 entry-points."hls4ml.backends".AIE = "aie4ml.plugin:register"

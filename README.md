@@ -12,7 +12,17 @@
 - Enables high throughput especially for large models
 - Currently supports Gen2 architecture devices (AIE-ML) with plans for broader support in the future.
 
-If you have any questions, comments, or ideas regarding `aie4ml`, please open an issue or start a discussion in this repository.
+
+# Frontend Compatibility
+
+Operates on the intermediate model representation produced by hls4ml, therefore independent of the frontend (i.e., PyTorch, QKeras, etc.).
+
+# Installation
+
+```bash
+pip install git+https://github.com/fastmachinelearning/hls4ml.git@main
+pip install aie4ml
+```
 
 # Documentation & Tutorials
 
@@ -22,7 +32,4 @@ Full documentation and usage notes will be maintained here:
 For general `hls4ml` concepts (model conversion, quantisation, configuration), see:
 👉 [https://fastmachinelearning.org/hls4ml](https://fastmachinelearning.org/hls4ml)
 
-# Installation
-
-```bash
-pip install .
+If you have any questions, comments, or ideas regarding `aie4ml`, please open an issue or start a discussion in this repository.
