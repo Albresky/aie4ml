@@ -3,14 +3,18 @@
 </p>
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-red.svg)](https://opensource.org/licenses/Apache-2.0)
+[![PyPI](https://img.shields.io/pypi/v/aie4ml.svg)](https://pypi.org/project/aie4ml/)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/aie4ml.svg)](https://pypi.org/project/aie4ml/)
+[![arXiv](https://img.shields.io/badge/arXiv-2512.15946-b31b1b.svg)](https://arxiv.org/abs/2512.15946)
 
-`aie4ml` (to be published soon) is a plugin backend for [`hls4ml`](https://github.com/fastmachinelearning/hls4ml) that targets the **AMD AI Engine (AIE)**.  `aie4ml` generates **ready-to-compile AIE projects** that can be built directly using **AMD Vitis**.
+`aie4ml` is an end-to-end compiler that generates **optimized** AIE firmware automatically, which can be then built and simulated directly using **AMD Vitis**. Currently, it is developed as a plugin that extends the backends for [`hls4ml`](https://github.com/fastmachinelearning/hls4ml) in order to target the **AMD AI Engine (AIE)**.
 
-- Supports linear (dense) layers, with optional bias and ReLU activation
-- Produces optimized implementations that can automatically scale across the AIE array
-- Offers much shorter compilation/synthesis times compared to traditional FPGA HLS flows
-- Enables high throughput especially for large models
-- Currently supports Gen2 architecture devices (AIE-ML) with plans for broader support in the future.
+- Current support: dense (linear) layers with optional bias & ReLU. Support for AIE-ML/AIE-MLv2 devices.
+
+## Prerequisites
+
+- AMD Vitis 2025.1 or 2025.2 and a valid AIE tools license.
+- Python 3.10+ and the latest version of [`hls4ml`](https://github.com/fastmachinelearning/hls4ml) package.
 
 
 # Frontend Compatibility
@@ -26,10 +30,29 @@ pip install aie4ml
 
 # Documentation & Tutorials
 
-Full documentation and usage notes will be maintained here:
-👉 [https://github.com/dimdano/aie4ml](https://github.com/dimdano/aie4ml)
+Documentation and usage: [https://github.com/dimdano/aie4ml](https://github.com/dimdano/aie4ml)
 
-For general `hls4ml` concepts (model conversion, quantisation, configuration), see:
-👉 [https://fastmachinelearning.org/hls4ml](https://fastmachinelearning.org/hls4ml)
+Tutorial (model conversion, firmware generation, and simulation): [`tutorials/tutorial_1.ipynb`](tutorials/tutorial_1.ipynb)
 
-If you have any questions, comments, or ideas regarding `aie4ml`, please open an issue or start a discussion in this repository.
+General `hls4ml` concepts: [https://fastmachinelearning.org/hls4ml](https://fastmachinelearning.org/hls4ml)
+
+
+## Maintainer
+
+`aie4ml` is developed and maintained by [Dimitrios Danopoulos](https://github.com/dimdano).
+
+## Citation
+
+If `aie4ml` contributes to your research, please cite the corresponding arXiv preprint:
+
+```bibtex
+@misc{danopoulos2025aie4mlendtoendframeworkcompiling,
+      title={AIE4ML: An End-to-End Framework for Compiling Neural Networks for the Next Generation of AMD AI Engines},
+      author={Dimitrios Danopoulos and Enrico Lupi and Chang Sun and Sebastian Dittmeier and Michael Kagan and Vladimir Loncar and Maurizio Pierini},
+      year={2025},
+      eprint={2512.15946},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG},
+      url={https://arxiv.org/abs/2512.15946},
+}
+```
